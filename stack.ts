@@ -10,7 +10,7 @@ export class Stack<T> {
       );
     }
 
-    return this.#arr[0];
+    return this.pop();
   }
 
   push(item: T): void {
