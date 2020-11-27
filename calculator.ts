@@ -16,6 +16,3 @@ export class Calculator {
     return calculation.reduce();
   }
 }
-
-
-

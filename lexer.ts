@@ -21,16 +21,18 @@ export class Lexer {
   }
 
   parse(input: string): Node[] {
-    const list = input.split(/\s/)
+    const list = input.split(/\s/);
 
-    return list.map(element => {
+    return list.map((element) => {
       const number = Number(element);
 
       if (!Number.isNaN(number)) {
         return number;
       } else {
         const operation = this.#operationMap.get(element) ?? null;
-        if (operation === null) throw new InvalidToken(`Invalid token "${element}"`);
+        if (operation === null) {
+          throw new InvalidToken(`Invalid token "${element}"`);
+        }
 
         return new Operator(element, operation);
       }

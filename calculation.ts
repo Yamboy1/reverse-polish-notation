@@ -22,6 +22,4 @@ export class Calculation {
 
     return this.#stack.single();
   }
-
-
 }
