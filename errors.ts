@@ -16,11 +16,11 @@ export class StackTooBigError extends Error {
   }
 }
 
-export class InvalidToken extends Error {
+export class InvalidTokenError extends Error {
   constructor(message: string) {
     super();
 
-    this.name = "InvalidToken";
+    this.name = "InvalidTokenError";
     this.message = message;
   }
 }

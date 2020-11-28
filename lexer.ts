@@ -1,4 +1,4 @@
-import { InvalidToken } from "./errors.ts";
+import { InvalidTokenError } from "./errors.ts";
 import { Operation } from "./operations.ts";
 
 export type Node = number | Operator;
@@ -31,7 +31,7 @@ export class Lexer {
       } else {
         const operation = this.#operationMap.get(element) ?? null;
         if (operation === null) {
-          throw new InvalidToken(`Invalid token "${element}"`);
+          throw new InvalidTokenError(`Invalid token "${element}"`);
         }
 
         return new Operator(element, operation);
