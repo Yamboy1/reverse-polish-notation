@@ -2,7 +2,7 @@ import { Calculator } from "./calculator.ts";
 
 const calculator = new Calculator();
 
-console.log("press ctrl-c to exit")
+console.log("press ctrl-c to exit");
 
 while (true) {
   const input = prompt(">");
@@ -13,6 +13,6 @@ while (true) {
   } catch (e) {
     if (!(e instanceof Error)) throw e;
 
-    console.error("%s: %s", e.name, e.message)
+    console.error("%s: %s", e.name, e.message);
   }
 }
