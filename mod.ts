@@ -1,7 +1,3 @@
-import { Calculator } from "./calculator.ts";
-import { operations } from "./operations.ts";
+export { Calculator } from "./src/calculator.ts";
 
-const calculator = new Calculator(operations);
-
-console.log(calculator.calculate("1 2 +"));
-console.log(calculator.calculate("3 4 5 * -"));
+export type { Operation } from "./src/operations.ts";

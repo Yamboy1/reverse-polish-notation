@@ -1,4 +1,4 @@
-import { Calculator } from "./calculator.ts";
+import { Calculator } from "./src/calculator.ts";
 
 const calculator = new Calculator();
 
