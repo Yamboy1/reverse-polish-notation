@@ -1,11 +1,3 @@
 # Reverse Polish Notation Calculator
 
-## Examples
-
-```bash
-1 2 + # 3
-```
-
-```bash
-3 4 5 * - # -17
-```
+A simple [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator library written in Deno.
