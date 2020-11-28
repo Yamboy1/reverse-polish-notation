@@ -1,11 +1,11 @@
 import { Calculation } from "./calculation.ts";
 import { Lexer } from "./lexer.ts";
-import { Operation } from "./operations.ts";
+import { operations } from "./operations.ts";
 
 export class Calculator {
   #lexer: Lexer;
 
-  constructor(operationMap: Map<string, Operation>) {
+  constructor(operationMap = operations) {
     this.#lexer = new Lexer(operationMap);
   }
 
