@@ -1,0 +1,14 @@
+name: rpn-calculator
+entry: ./mod.ts
+description: A basic Reverse Polish calculator
+homepage: https://github.com/Yamboy1/reverse-polish-notation
+unstable: true
+unlisted: false
+version: 0.1.0
+files:
+  - ./*.ts
+  - ./README.md
+  - ./LICENSE
+checkFormat: deno fmt
+checkTests: deno test
+checkInstallation: true
