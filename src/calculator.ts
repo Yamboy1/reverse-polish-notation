@@ -15,4 +15,11 @@ export class Calculator {
     const calculation = new Calculation(nodes);
     return calculation.reduce();
   }
+
+  showSteps(input: string) {
+    const nodes = this.#lexer.parse(input);
+
+    const calculation = new Calculation(nodes);
+    return calculation.getSteps();
+  }
 }

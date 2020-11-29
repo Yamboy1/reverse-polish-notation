@@ -1,25 +1,51 @@
 import { Stack } from "./stack.ts";
-import { Node } from "./lexer.ts";
+import { Node, Operator } from "./lexer.ts";
 
 export class Calculation {
-  #stack = new Stack<number>();
-  #nodes: Node[];
+  #stack = new Stack<Node<number>>();
+  readonly #nodes: Node<number | Operator>[];
 
-  constructor(nodes: Node[]) {
+  #steps : Map<number, number | Operator| null>;
+  #allSteps: string[] = []
+
+  constructor(nodes: Node<number | Operator>[]) {
     this.#nodes = nodes;
+    this.#steps = new Map(nodes.map(node => [node.index, node.value]));
   }
 
-  reduce(): number {
+  // @ts-ignore
+  #calculate(): [number, string] {
     for (const node of this.#nodes) {
-      if (typeof node === "number") {
-        this.#stack.push(node);
+      const { index, value } = node;
+
+      if (typeof value === "number") {
+        this.#stack.push(node as Node<number>);
       } else {
         const elements = this.#stack.pop2();
-        const result = node.operation(...elements);
-        this.#stack.push(result);
+
+        for (const element of elements) {
+          this.#steps.set(element.index,null);
+        }
+
+        const result = value.operation(elements[0].value, elements[1].value);
+
+        this.#steps.set(node.index, result);
+        this.#stack.push(new Node(result, index));
+
+        this.#allSteps.push([...this.#steps.values()].filter(value => value !== null).join(" "))
       }
     }
 
-    return this.#stack.single();
+
+    return [this.#stack.single().value, this.#allSteps.join("\n")];
   }
+
+  reduce() {
+    return this.#calculate()[0];
+  }
+
+  getSteps() {
+    return this.#calculate()[1];
+  }
+
 }

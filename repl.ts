@@ -9,7 +9,7 @@ while (true) {
   if (input === null) continue;
 
   try {
-    console.log(calculator.calculate(input));
+    console.log(calculator.showSteps(input));
   } catch (e) {
     if (!(e instanceof Error)) throw e;
 
