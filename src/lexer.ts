@@ -3,7 +3,7 @@ import { Operation } from "./operations.ts";
 
 export class Node<T> {
   value: T;
-  index: number
+  index: number;
 
   constructor(value: T, index: number) {
     this.value = value;
@@ -47,7 +47,9 @@ export class Lexer {
         }
 
         return new Node(
-          new Operator(element, operation), index);
+          new Operator(element, operation),
+          index,
+        );
       }
     });
   }
