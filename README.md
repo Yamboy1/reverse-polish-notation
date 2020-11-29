@@ -9,7 +9,7 @@ A simple [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator
 
 For a simple repl showing off this library, you can run:
 ```bash
-$ deno run https://x.nest.land/rpn-calculator@1.0.0/repl.ts
+$ deno run https://x.nest.land/rpn-calculator@1.1.3/repl.ts
 ```
 
 Here are some example calculations to input: `1 1 +`, `12 1 3 + *`
@@ -17,7 +17,7 @@ Here are some example calculations to input: `1 1 +`, `12 1 3 + *`
 ## Usage
 
 ```js
-import { Calculator } from "https://x.nest.land/rpn-calculator@1.0.0/mod.ts"
+import { Calculator } from "https://x.nest.land/rpn-calculator@1.1.3/mod.ts"
 
 const calculator = new Calculator();
 
