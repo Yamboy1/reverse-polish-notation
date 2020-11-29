@@ -1,6 +1,6 @@
 # Reverse Polish Notation Calculator
 
-[![nest badge](https://nest.land/badge.svg)](https://nest.land/package/your-module)
+[![nest badge](https://nest.land/badge.svg)](https://nest.land/package/rpn-calculator)
 
 
 A simple [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator library written in Deno.
