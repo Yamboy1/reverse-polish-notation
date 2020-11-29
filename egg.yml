@@ -4,7 +4,7 @@ description: A basic Reverse Polish calculator
 homepage: 'https://github.com/Yamboy1/reverse-polish-notation'
 unstable: false
 unlisted: false
-version: 1.0.0
+version: 1.1.0
 files:
   - ./mod.ts
   - ./repl.ts
